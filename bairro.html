@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Onde você está</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+      font-family: Georgia, serif;
+      color: #222;
+    }
+    .caixa {
+      text-align: center;
+      max-width: 400px;
+    }
+    input {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      font-family: inherit;
+    }
+    button {
+      margin-top: 1.2rem;
+      background: none;
+      border: 1px solid #222;
+      padding: 0.5rem 1.2rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .resposta {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      display: none;
+    }
+    a {
+      display: block;
+      margin-top: 2rem;
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="caixa">
+    <p>Em qual bairro você escaneou este QR Code?</p>
+    <input type="text" id="bairro" placeholder="Digite aqui">
+    <button onclick="mostrarResposta()">confirmar</button>
+
+    <div class="resposta" id="resposta"></div>
+
+    <a id="seguir" href="sentimento.html">continuar</a>
+  </div>
+
+  <script>
+    function mostrarResposta() {
+      const bairro = document.getElementById('bairro').value;
+      if (bairro.trim() !== "") {
+        document.getElementById('resposta').innerText =
+          `Ah, você está em ${bairro}. Aqui, os sentimentos se encontram.`;
+        document.getElementById('resposta').style.display = 'block';
+        document.getElementById('seguir').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
