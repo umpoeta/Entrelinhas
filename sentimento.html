@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Escolha seu sentimento</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+      font-family: Georgia, serif;
+      color: #222;
+    }
+    .caixa {
+      text-align: center;
+      max-width: 500px;
+    }
+    button {
+      margin: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: inherit;
+      border: 1px solid #222;
+      background: none;
+    }
+    .resposta {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      display: none;
+    }
+    a {
+      display: block;
+      margin-top: 2rem;
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="caixa">
+    <p>Toque no sentimento que define seu ano até aqui:</p>
+    <button onclick="mostrarFrase('Saudade')">Saudade</button>
+    <button onclick="mostrarFrase('Esperança')">Esperança</button>
+    <button onclick="mostrarFrase('Lucidez')">Lucidez</button>
+    <button onclick="mostrarFrase('Incerteza')">Incerteza</button>
+    <button onclick="mostrarFrase('Desejo')">Desejo</button>
+    <button onclick="mostrarFrase('Melancolia')">Melancolia</button>
+    <button onclick="mostrarFrase('Renovação')">Renovação</button>
+
+    <div class="resposta" id="resposta"></div>
+
+    <a id="seguir" href="objeto.html">continuar</a>
+  </div>
+
+  <script>
+    function mostrarFrase(sentimento) {
+      const frases = {
+        'Saudade': 'O que dói não é o passado, é a consciência de que ele não volta.',
+        'Esperança': 'Insiste em seguir, mesmo cansada. A razão não desistiu.',
+        'Lucidez': 'É mais triste compreender do que não saber.',
+        'Incerteza': 'Faz toda escolha parecer uma perda.',
+        'Desejo': 'A alma pede antes de entender o que é.',
+        'Melancolia': 'Permeia os sentimentos e permanece.',
+        'Renovação': 'Aceitar a mudança, não como fim, mas como fôlego.'
+      };
+      document.getElementById('resposta').innerText = frases[sentimento];
+      document.getElementById('resposta').style.display = 'block';
+      document.getElementById('seguir').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
